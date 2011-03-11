@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BuscapeAPI Javascript wrapper test page</title>
+		<script type="text/javascript" src="BuscapeAPI.js"></script>
+		<script>
+			/*
+			 * Application ID usado para testes na API do BuscaPé. O mesmo não é válido para
+			 * o ambiente de produção.
+			 */
+			var applicationID  = '564771466d477a4458664d3d';
+			var sourceID       = '';
+			
+			var objBuscaPeApi = new BuscapeAPI( applicationID , sourceID );
+			
+			objBuscaPeApi.setSandbox();
+			objBuscaPeApi.findCategoryList( { categoryId : 0 } );
+			objBuscaPeApi.receiveContent = function( result ) {
+				alert( result.details.message );
+			};
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
